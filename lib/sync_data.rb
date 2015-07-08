@@ -1,4 +1,4 @@
-class SyncPasswordData
+class SyncData
   attr_reader :trogdir_person
 
   def initialize(trogdir_person)
@@ -12,7 +12,7 @@ class SyncPasswordData
   end
 
   def create
-    Log.info "Creating PASSWORD account for person #{trogdir_person.netid}"
+    Log.info "Creating Portal entry for person #{trogdir_person.netid}"
     result = client.execute("INSERT INTO #{Settings.data_warehouse.table}
                             (id, name, shortname, shortname_name, shortname_number)
                             VALUES (\'#{trogdir_person.legacy_biola_id}\', \'#{trogdir_person.name}\', \'#{trogdir_person.netid}\', \'#{trogdir_person.netid_name}\', \'#{trogdir_person.netid_number}\')")
@@ -22,7 +22,7 @@ class SyncPasswordData
   end
 
   def update
-    Log.info "Update PASSWORD account for person #{trogdir_person.netid}"
+    Log.info "Update Portal entry for person #{trogdir_person.netid}"
     result = client.execute("UPDATE #{Settings.data_warehouse.table}
                             SET name=\'#{trogdir_person.name}\', shortname=\'#{trogdir_person.netid}\', shortname_name=\'#{trogdir_person.netid_name}\', shortname_number=\'#{trogdir_person.netid_number}\'
                             WHERE id=\'#{trogdir_person.legacy_biola_id}\'")

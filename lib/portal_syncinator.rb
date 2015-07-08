@@ -12,11 +12,11 @@ module PortalSyncinator
     end
 
     Sidekiq.configure_server do |config|
-      config.redis = { url: Settings.redis.url, namespace: 'password-syncinator' }
+      config.redis = { url: Settings.redis.url, namespace: 'portal-syncinator' }
     end
 
     Sidekiq.configure_client do |config|
-      config.redis = { url: Settings.redis.url, namespace: 'password-syncinator' }
+      config.redis = { url: Settings.redis.url, namespace: 'portal-syncinator' }
     end
 
     TrogdirAPIClient.configure do |config|
