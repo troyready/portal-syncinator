@@ -1,0 +1,12 @@
+sentry:
+  url:
+
+trogdir:
+  access_id:
+  secret_key:
+
+data_warehouse:
+  dataserver: "**********"
+  table: "***************"
+  username: "************"
+  password: "************"
