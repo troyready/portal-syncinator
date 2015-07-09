@@ -1,4 +1,4 @@
-Portal Syncinator
+Portal Syncinator [![Build Status](https://travis-ci.org/biola/portal-syncinator.svg)](https://travis-ci.org/biola/portal-syncinator)
 =================
 
 Portal Syncinator is a temporary tool to put newly created accounts from [trogdir-api](https://github.com/biola/trogdir-api) into the Legacy Portal table.
