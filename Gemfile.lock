@@ -141,6 +141,3 @@ DEPENDENCIES
   sidetiq
   tiny_tds!
   trogdir_api_client
-
-BUNDLED WITH
-   1.10.5
