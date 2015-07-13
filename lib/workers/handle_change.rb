@@ -8,7 +8,7 @@ module Workers
       begin
         trogdir_person = TrogdirPerson.new(person_uuid)
         action = SyncData.new(trogdir_person).create_or_update!
-        TrogdirChangeFinishWorker.perform_async change.sync_log_id, action
+        TrogdirChangeFinishWorker.perform_async sync_log_id, action
       rescue StandardError => err
         TrogdirChangeErrorWorker.perform_async(sync_log_id, err.message)
         Raven.capture_exception(err) if defined? Raven
