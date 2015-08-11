@@ -6,26 +6,26 @@ class TrogdirPerson
   end
 
   def biola_id
-    get_value_from_nested_record(:ids, :biola_id, :identifier).gsub("'", "\\\\'")
+    get_value_from_nested_record(:ids, :biola_id, :identifier)
   end
 
   def legacy_biola_id
     zero_pad = Settings.biola_id_length - biola_id.length
-    "0"*zero_pad + biola_id.gsub("'", "\\\\'")
+    "0"*zero_pad + biola_id
   end
 
   def netid
-    get_value_from_nested_record(:ids, :netid, :identifier).gsub("'", "\\\\'")
+    get_value_from_nested_record(:ids, :netid, :identifier)
   end
 
   # Ex: johnd of netid johnd0
   def netid_name
-    netid.gsub(/[0-9]/, "").gsub("'", "\\\\'")
+    netid.gsub(/[0-9]/, "")
   end
 
   # Ex: 0 of netid johnd0
   def netid_number
-    netid.gsub(/[a-z]/, "").gsub("'", "\\\\'")
+    netid.gsub(/[a-z]/, "")
   end
 
   def name
@@ -39,15 +39,15 @@ class TrogdirPerson
   end
 
   def first_name
-    hash['first_name'].gsub("'", "\\\\'")
+    hash['first_name']
   end
 
   def middle_name
-    hash['middle_name'].gsub("'", "\\\\'")
+    hash['middle_name']
   end
 
   def last_name
-    hash['last_name'].gsub("'", "\\\\'")
+    hash['last_name']
   end
 
   def get_value_from_nested_record(collection, type, return_attr)
