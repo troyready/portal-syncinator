@@ -34,7 +34,7 @@ class SyncData
   private
 
   def client
-    client = TinyTds::Client.new username: Settings.data_warehouse.username, password: Settings.data_warehouse.password, dataserver: Settings.data_warehouse.dataserver
+    @client ||= TinyTds::Client.new username: Settings.data_warehouse.username, password: Settings.data_warehouse.password, dataserver: Settings.data_warehouse.dataserver
   end
 
   def escape(string)
