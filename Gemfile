@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'blazing'
 # Fixes this issue https://github.com/mongoid/moped/issues/345
 gem 'moped', '2.0.4', git: 'https://github.com/wandenberg/moped', branch: 'operation_timeout'
 gem 'mysql2'
