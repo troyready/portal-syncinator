@@ -18,13 +18,11 @@ git clone git@github.com:biola/password-syncinator.git
 cd password-syncinator
 bundle install
 cp config/settings.local.yml.example config/settings.local.yml
-cp config/blazing.rb.example config/blazing.rb
 ```
 
 Configuration
 -------------
 - Edit `config/settings.local.yml` accordingly.
-- Edit `config/blazing.rb` accordingly.
 
 Running
 -------
